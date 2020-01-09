@@ -1,0 +1,17 @@
+{
+  "ErrorDocument": {
+    "Key": "jsearch/index.html"
+  },
+  "IndexDocument": {
+    "Suffix": "index.html"
+  },
+  "RoutingRules": [
+    { "Condition": { "KeyPrefixEquals": "en/latest/" }, "Redirect": { "HostName": "$BUCKET", "ReplaceKeyPrefixWith": "" } },
+    { "Condition": { "KeyPrefixEquals": "en/master/" }, "Redirect": { "HostName": "$BUCKET", "ReplaceKeyPrefixWith": "" } },
+    { "Condition": { "KeyPrefixEquals": "en/v0.6.3/" }, "Redirect": { "HostName": "$BUCKET", "ReplaceKeyPrefixWith": "" } },
+    { "Condition": { "KeyPrefixEquals": "jsearch/index.html" }, "Redirect": { "HostName": "$BUCKET", "ReplaceKeyPrefixWith": "jsearch/" } },
+    { "Condition": { "KeyPrefixEquals": "index/" }, "Redirect": { "HostName": "$BUCKET", "ReplaceKeyPrefixWith": "docker-io/" } },
+    { "Condition": { "KeyPrefixEquals": "reference/api/index_api/" }, "Redirect": { "HostName": "$BUCKET", "ReplaceKeyPrefixWith": "reference/api/docker-io_api/" } }
+  ]
+}
+
